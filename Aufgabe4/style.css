@@ -1,13 +1,155 @@
-html, body{
-     margin: 0;
+html,
+body {
+    margin: 0;
+    background-color: rgb(226, 226, 226)
 
 }
-   
-main{
+header{
+    background: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 70px;
+    
+    
+    
+    }
+    .logo{
+        
+        position:relative;
+        
+        padding-left: 480px;
+       
+    }
+ul {
+        
+        list-style-type: none;
+        margin: 0;
+        padding-right: 50px;
+        overflow: hidden;
+        
+      }
+      
+      li {
+        float: right;
+      }
+      
+      li a {
+        display: block;
+        color: white;
+        text-align: right;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 20px;
+      }
+      
+      li a:hover {
+        background-color: #111;
+        text-decoration: underline;
+      }
+
+      li a:active {
+        color: white;
+        text-decoration: underline;
+      }
+
+      .button {
+        text-decoration: none;
+        color:grey;
+        margin:20px;
+      }
+
+      .button:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      .button:active{
+        color: white;
+        text-decoration: underline;
+      }
+
+      .button2 {
+        color: white;
+        text-decoration: underline;
+        margin:20px;
+      }
+      
+
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    ;
+}
+.content {
+    margin-left: 500px;
+    margin-right: 280px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     
 }
-
-footer{
-      background: #eaeaea
+.drawing {
+    align-items: center;
 }
-  
+.input1 { 
+    background-color: grey;
+    margin: 2px;
+    width: 50%;
+    height: 18px;
+    border-color: rgb(184, 180, 180);
+    color: white;
+}
+
+.input1::placeholder {
+    color: white;
+}
+
+.input2 { 
+    background-color: grey;
+    margin: 2px;
+    width: 50%;
+    height: 250px;
+    border-color: rgb(184, 180, 180);
+    color: white;
+}
+
+.input2::placeholder {
+    color: white;
+}
+
+#send-button {
+    background-color: grey;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    padding-top: 5px;
+    margin: 5px;
+    width: 8%;
+    border-style: inset;
+    border-color: rgb(158, 158, 158);
+    border-radius: 5px;
+    text-align: center;
+}
+
+main {
+    
+}
+.img{
+    padding-left: 50px;
+}
+
+footer {
+    background: #d6d6d6;
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: ;
+    display:flex;
+    flex-direction: row;
+    flex-basis: 20px;
+    justify-content: space-around;
+}
