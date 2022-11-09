@@ -83,14 +83,22 @@ body {
     ;
 }
 .content {
-    margin-left: 500px;
-    margin-right: 280px;
+    width:70%;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 50px;
     margin-bottom: 50px;
     color: whitesmoke;
     
 }
 .drawing {
+    width: 70%;
+    align-items: center;
+}
+
+.progress {
+    width: 30%;
     align-items: center;
 }
 .input1 { 
@@ -136,9 +144,7 @@ body {
 main {
     
 }
-.img{
-    padding-left: 50px;
-}
+
 
 footer {
     background: #d6d6d6;
