@@ -93,12 +93,12 @@ body {
     
 }
 .drawing {
-    width: 70%;
+    width: 100%;
     align-items: center;
 }
 
 .progress {
-    width: 30%;
+    width: 33%;
     align-items: center;
 }
 .input1 { 
