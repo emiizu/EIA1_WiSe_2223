@@ -1,163 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 html,
 body {
-    margin: 0;
-    background-color: rgb(48, 47, 47)
+  margin: 0;
+  background-color: rgb(48, 47, 47)
+}
+
+header {
+  background-color: #111;
+  color: white;
+  font-family: 'Michroma', sans-serif;
+  padding-top: 70px;
+
+
 
 }
-header{
-    background: black;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    padding-top: 70px;
-    
-    
-    
-    }
-    .logo{
-        
-        position:relative;
-        
-        margin-left: 15%;
-       
-    }
+.stoerer {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+
+}
+
+.stoerer:hover {
+  transform: scale(1.1);
+
+}
+
+
+css-slides img { 
+  opacity:0; 
+  animation-name: fade; 
+  animation-duration: 9s; 
+  animation-iteration-count: infinite; 
+  position:absolute; 
+  left:0; 
+  right:0; 
+}
+css-slides img:nth-child(1) { animation-delay: 0s; }
+css-slides img:nth-child(2) { animation-delay: 3s; }
+css-slides img:nth-child(3) { animation-delay: 6s; } 
+
+@keyframes fade {
+	0%      { opacity: 0; }  /** fadeIn beginnt            **/
+	11.11%  { opacity: 1; }  /** Bild steht                **/
+	33.33%  { opacity: 1; }  /** Bild bleibt zwei Sekunden **/
+	44.44%  { opacity: 0; }  /** fadeOut beendet           **/
+	100%    { opacity: 0; }
+}
+css-slides {
+	position:relative;
+	height:0;
+	padding-bottom: 20%;
+	overflow:hidden;
+	display:block;
+}
+
+.logo {
+
+  position: relative;
+
+  margin-left: 15%;
+
+}
+
 ul {
-        
-        list-style-type: none;
-        margin: 0;
-        padding-right: 50px;
-        margin-right: 200px;
-        overflow: hidden;
-        
-      }
-      
-      li {
-        float: right;
-      }
-      
-      li a {
-        display: block;
-        color: white;
-        text-align: right;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 20px;
-      }
-      
-      li a:hover {
-        background-color: #111;
-        text-decoration: underline;
-      }
 
-      li a:active {
-        color: white;
-        text-decoration: underline;
-      }
+  list-style-type: none;
+  margin: 0;
+  padding-right: 50px;
+  margin-right: 200px;
+  overflow: hidden;
 
-      .button {
-        text-decoration: none;
-        color:grey;
-        margin:20px;
-      }
+}
 
-      .button:hover {
-        color: white;
-        text-decoration: underline;
-      }
+li {
+  float: right;
+}
 
-      .button:active{
-        color: white;
-        text-decoration: underline;
-      }
+li a {
+  display: block;
+  color: white;
+  text-align: right;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
 
-      .button2 {
-        color: white;
-        text-decoration: underline;
-        margin:20px;
-      }
-      
+li a:hover {
+  background-color: #111;
+  text-decoration: underline;
+}
+
+li a:active {
+  color: white;
+  text-decoration: underline;
+}
+
+.button {
+  text-decoration: none;
+  color: grey;
+  margin: 20px;
+}
+
+.button:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.button:active {
+  color: white;
+  text-decoration: underline;
+}
+
+.button2 {
+  color: white;
+  text-decoration: underline;
+  margin: 20px;
+}
+
+
 
 
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    ;
+  font-family: 'Michroma', sans-serif;
 }
+
 .content {
-    width:70%;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    color: whitesmoke;
-    
+  width: 70%;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: whitesmoke;
+
 }
+
 .drawing {
-    width: 100%;
-    align-items: center;
+  width: 100%;
+  align-items: center;
+  opacity: 0.7;
+  transform: scale(1);
+}
+
+.drawing:hover {
+  transform: scale(1.1);
+  opacity: 1;
+
 }
 
 .progress {
-    width: 33%;
-    align-items: center;
+  width: 33%;
+  align-items: center;
+  opacity: 0.5;
+  transform: scale(1);
 }
-.input1 { 
-    background-color: grey;
-    margin: 2px;
-    width: 50%;
-    height: 18px;
-    border-color: rgb(184, 180, 180);
-    color: white;
+
+.progress:hover {
+  transform: scale(1.1);
+  opacity: 1;
+
+}
+
+.input1 {
+  background-color: grey;
+  margin: 2px;
+  width: 50%;
+  height: 18px;
+  border-color: rgb(184, 180, 180);
+  color: white;
 }
 
 .input1::placeholder {
-    color: white;
+  color: white;
 }
 
-.input2 { 
-    background-color: grey;
-    margin: 2px;
-    width: 50%;
-    height: 250px;
-    border-color: rgb(184, 180, 180);
-    color: white;
+.input2 {
+  background-color: grey;
+  margin: 2px;
+  width: 50%;
+  height: 250px;
+  border-color: rgb(184, 180, 180);
+  color: white;
 }
 
 .input2::placeholder {
-    color: white;
+  color: white;
 }
 
 #send-button {
-    background-color: grey;
-    color: white;
-    text-decoration: none;
-    padding: 5px;
-    padding-top: 5px;
-    margin: 5px;
-    width: 8%;
-    border-style: inset;
-    border-color: rgb(158, 158, 158);
-    border-radius: 5px;
-    text-align: center;
+  background-color: grey;
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+  padding-top: 5px;
+  margin: 5px;
+  width: 8%;
+  border-style: inset;
+  border-color: rgb(158, 158, 158);
+  border-radius: 5px;
+  text-align: center;
 }
 
-main {
-    
-}
+main {}
 
 
 footer {
-    background: #d6d6d6;
-    color: grey;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: ;
-    display:flex;
-    flex-direction: row;
-    flex-basis: 20px;
-    justify-content: space-around;
+  background: #d6d6d6;
+  color: grey;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: ;
+  display: flex;
+  flex-direction: row;
+  flex-basis: 20px;
+  justify-content: space-around;
+
+
+}
+
+.socialmedia {
+  opacity: 0.5;
+}
+
+.socialmedia:hover {
+  opacity: 1;
+
 }
