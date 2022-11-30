@@ -88,18 +88,19 @@ console.log("Wachstumsrate seit 2008: " + WachstumsrateEU + "%")
 let WachstumEU = (EinwohnerEU - EinwohnerEU08).toFixed(2);
 console.log("Wachstum gesamt zwischen 2008 und 2022: " + WachstumEU + " Millionen");
 
-document.querySelector("#de").addEventListener('click', function() {
+function myFunction (Relativ:number, Einwohner:number, Wachstumsrate:number, Wachstum:number) {
 
+    document.querySelector(".chart").setAttribute("style","height:" + Relativ + "%");
+    document.querySelector("#Einwohner").innerHTML = Einwohner + " Mio";
+    document.querySelector("#Relativ").innerHTML = Relativ + " %";
+    document.querySelector("#Wachstumsrate").innerHTML = Wachstumsrate + " %";
+    document.querySelector("#Wachstum").innerHTML = Wachstum + " Mio";
+    
    
-    document.querySelector(".chart").setAttribute("style","height:" + DErelativzuEU + "%");
-    document.querySelector("#Einwohner").innerHTML = EinwohnerDE + " Mio";
-    document.querySelector("#EinwohnerText").innerHTML = "Gesamtzahl Einwohnerinnen und Einwohner in Deutschland in 2022";
-    document.querySelector("#Relativ").innerHTML = DErelativzuEU + " %";
-    document.querySelector("#Wachstumsrate").innerHTML = WachstumsrateDE + " %";
-    document.querySelector("#Wachstum").innerHTML = WachstumDE + " Mio";
-    document.querySelector("#title").innerHTML ="Einwohnerzahlen in Deutschland";
-   
-})
+
+}
+
+document.querySelector("#de").addEventListener('click', myFunction(DErelativzuEU, EinwohnerDE, WachstumsrateDE, WachstumDE))
 
 document.querySelector("#fr").addEventListener('click', function() {
 
