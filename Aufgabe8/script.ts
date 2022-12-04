@@ -81,6 +81,8 @@ let sounds: string [] = [
         sounds[9], sounds[0]
     ];
 
+
+
 function playMusic() {
     setInterval(function() {
         playSample (music[zahl]);
@@ -89,7 +91,10 @@ function playMusic() {
             zahl=0;
         }
     }, 500);
+    
+
 }
+
 
 document.querySelector(".play").addEventListener("click", function() {playMusic();});
     
