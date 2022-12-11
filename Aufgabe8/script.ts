@@ -1,3 +1,4 @@
+namespace L08 {
 let zahl: number = 0;
 
 let a:HTMLAudioElement = new Audio('./Keyboard/a.mp3');
@@ -97,4 +98,4 @@ function playMusic() {
 
 
 document.querySelector(".play").addEventListener("click", function() {playMusic();});
-    
+} 

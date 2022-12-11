@@ -1,6 +1,8 @@
-var L08;
-(function (L08) {
+var L09;
+(function (L09) {
     let zahl = 0;
+    let interval;
+    let check = 0;
     let a = new Audio('./Keyboard/a.mp3');
     let af = new Audio('./Keyboard/af.mp3');
     let b = new Audio('./Keyboard/b.mp3');
@@ -13,10 +15,57 @@ var L08;
     let f = new Audio('./Keyboard/f.mp3');
     let g = new Audio('./Keyboard/g.mp3');
     let gf = new Audio('./Keyboard/gf.mp3');
+    let sounds = [
+        ("./Keyboard/a.mp3"), ("./Keyboard/af.mp3"), ("./Keyboard/b.mp3"),
+        ("./Keyboard/bf.mp3"), ("./Keyboard/c.mp3"), ("./Keyboard/d.mp3"),
+        ("./Keyboard/df.mp3"), ("./Keyboard/e.mp3"), ("./Keyboard/ef.mp3"),
+        ("./Keyboard/f.mp3"), ("./Keyboard/g.mp3"), ("./Keyboard/gf.mp3")
+    ];
+    let music = [
+        sounds[2], sounds[3], sounds[11], sounds[1], sounds[10],
+        sounds[9], sounds[0]
+    ];
     function playSample(soundquelle) {
         let sound = new Audio(soundquelle);
         sound.play();
     }
+    function song() {
+        playSample(music[zahl]);
+        zahl += 1;
+        if (zahl > (music.length - 1))
+            zahl - 0;
+    }
+    function remix() {
+        playSample(music[zahl]);
+        zahl = Math.round(Math.random() * 9);
+    }
+    ;
+    function playMusic() {
+        if (check == 0) {
+            song();
+        }
+        else {
+            remix();
+        }
+    }
+    function playremix() {
+        if (document.getElementById("play").classList.contains("fa-play")) {
+            document.getElementById("play").classList.remove("fa-play");
+            document.getElementById("play").classList.add("fa-stop");
+            interval = setInterval(playMusic, 350);
+        }
+        else {
+            document.getElementById("play").classList.remove("fa-stop");
+            document.getElementById("play").classList.add("fa-play");
+            clearInterval(interval);
+            zahl = 0;
+        }
+    }
+    document.querySelector("#play").addEventListener("click", playremix);
+    document.querySelector("#remix").addEventListener("click", function () {
+        remix();
+        check = 1;
+    });
     document.querySelector("#a").addEventListener('click', function () {
         playSample(sounds[0]);
     });
@@ -53,25 +102,5 @@ var L08;
     document.querySelector("#gf").addEventListener('click', function () {
         playSample(sounds[11]);
     });
-    let sounds = [
-        ("./Keyboard/a.mp3"), ("./Keyboard/af.mp3"), ("./Keyboard/b.mp3"),
-        ("./Keyboard/bf.mp3"), ("./Keyboard/c.mp3"), ("./Keyboard/d.mp3"),
-        ("./Keyboard/df.mp3"), ("./Keyboard/e.mp3"), ("./Keyboard/ef.mp3"),
-        ("./Keyboard/f.mp3"), ("./Keyboard/g.mp3"), ("./Keyboard/gf.mp3")
-    ];
-    let music = [
-        sounds[2], sounds[3], sounds[11], sounds[1], sounds[10],
-        sounds[9], sounds[0]
-    ];
-    function playMusic() {
-        setInterval(function () {
-            playSample(music[zahl]);
-            zahl++;
-            if (zahl === 11) {
-                zahl = 0;
-            }
-        }, 500);
-    }
-    document.querySelector(".play").addEventListener("click", function () { playMusic(); });
-})(L08 || (L08 = {}));
+})(L09 || (L09 = {}));
 //# sourceMappingURL=script.js.map
