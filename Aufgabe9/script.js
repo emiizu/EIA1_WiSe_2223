@@ -36,11 +36,12 @@ var L09;
             zahl - 0;
     }
     function remix() {
-        playSample(music[zahl]);
         zahl = Math.round(Math.random() * 9);
+        music.push(sounds[zahl]);
     }
     ;
     function playMusic() {
+        console.log(check);
         if (check == 0) {
             song();
         }
@@ -49,6 +50,7 @@ var L09;
         }
     }
     function playremix() {
+        console.log("test2");
         if (document.getElementById("play").classList.contains("fa-play")) {
             document.getElementById("play").classList.remove("fa-play");
             document.getElementById("play").classList.add("fa-stop");
@@ -61,9 +63,14 @@ var L09;
             zahl = 0;
         }
     }
-    document.querySelector("#play").addEventListener("click", playremix);
+    document.querySelector("#play").addEventListener("click", function () {
+        playremix();
+    });
     document.querySelector("#remix").addEventListener("click", function () {
-        remix();
+        music = [];
+        for (let i = 0; i < 9; i++) {
+            remix();
+        }
         check = 1;
     });
     document.querySelector("#a").addEventListener('click', function () {
