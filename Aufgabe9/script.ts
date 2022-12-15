@@ -69,9 +69,7 @@ namespace L09 {
             song();
 
         }
-        else {
-            remix()
-        }
+       
     }
 
     function playremix() {

@@ -45,9 +45,6 @@ var L09;
         if (check == 0) {
             song();
         }
-        else {
-            remix();
-        }
     }
     function playremix() {
         console.log("test2");
