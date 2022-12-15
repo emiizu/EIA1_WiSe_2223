@@ -33,7 +33,7 @@ var L09;
         playSample(music[zahl]);
         zahl += 1;
         if (zahl > (music.length - 1))
-            zahl - 0;
+            zahl = 0;
     }
     function remix() {
         zahl = Math.round(Math.random() * 9);
