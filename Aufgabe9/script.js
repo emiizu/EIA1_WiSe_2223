@@ -42,9 +42,8 @@ var L09;
     ;
     function playMusic() {
         console.log(check);
-        if (check == 0) {
-            song();
-        }
+        (check == 0);
+        song();
     }
     function playremix() {
         console.log("test2");

@@ -65,10 +65,10 @@ namespace L09 {
     function playMusic() {
         console.log(check);
 
-        if (check == 0) {
+        (check == 0) 
             song();
 
-        }
+        
        
     }
 
