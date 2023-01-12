@@ -1,45 +1,67 @@
-var L11;
-(function (L11) {
-    window.addEventListener("load", function () {
-        let enter = document.getElementById("inputText");
-        let tasksNumber = 0;
-        enter.addEventListener("keypress", function (event) {
-            if (event.key == "Enter") {
-                addTask();
-                enter.value = "";
-            }
+;
+let todos = [
+    { text: "Lorem",
+        checked: true,
+    },
+    {
+        text: "Ipsum",
+        checked: false,
+    },
+    {
+        text: "Dolor",
+        checked: false,
+    },
+];
+var inputDOMElement;
+var addButtonDOMElement;
+var todosDOMElement;
+var counterDOMElement;
+window.addEventListener("load", function () {
+    inputDOMElement = document.querySelector("#inputTodo");
+    addButtonDOMElement = document.querySelector("#addButton");
+    todosDOMElement = document.querySelector("#todos");
+    counterDOMElement = document.querySelector("#counter");
+    addButtonDOMElement.addEventListener("click", addTodo);
+    drawListToDOM();
+});
+function drawListToDOM() {
+    todosDOMElement.innerHTML = "";
+    for (let index = 0; index < todos.length; index++) {
+        let todo = document.createElement("div");
+        todo.classList.add("todo");
+        todo.innerHTML = "<span class='check " + todos[index].checked + "'><i class='fas fa-check'></i></span>"
+            + todos[index].text +
+            "<span class='trash fas fa-trash-alt'></span>";
+        todo.querySelector(".check").addEventListener("click", function () {
+            toggleCheckState(index);
         });
-        function addTask() {
-            let div = document.createElement("div");
-            div.className = "toDoItem";
-            let checkbox = document.createElement("input");
-            checkbox.type = "checkbox";
-            checkbox.className = "checkBox";
-            let label = document.createElement("label");
-            label.innerHTML = enter.value;
-            label.className = "taskText";
-            let trash = document.createElement("i");
-            trash.className = "far fa-trash-alt";
-            document.getElementById("toDoList").appendChild(div);
-            div.appendChild(checkbox);
-            div.appendChild(label);
-            div.appendChild(trash);
-            function deleteTask(div) {
-                div.remove();
-                tasksNumber--;
-                tasksAnzahl();
-            }
-            trash.addEventListener("click", function (event) {
-                console.log(event);
-                deleteTask(div);
-            });
-            tasksNumber++;
-            tasksAnzahl();
-        }
-        function tasksAnzahl() {
-            document.getElementById("counter").innerText = tasksNumber + " in total";
-        }
-        // ich war am donnerstag und über die ferien krank und habe die aufgabe nicht erledigt, ich mache es aber bis zum donnerstag. tut mir leid...//
-    });
-})(L11 || (L11 = {}));
+        todo.querySelector(".trash").addEventListener("click", function () {
+            deleteTodo(index);
+        });
+        todosDOMElement.appendChild(todo);
+    }
+    updateCounter();
+}
+function updateCounter() {
+    counterDOMElement.innerHTML = todos.length + " in total";
+}
+function addTodo() {
+    if (inputDOMElement.value != "") {
+        const newtodo = {
+            text: inputDOMElement.value,
+            checked: false,
+        };
+        todos.unshift(newtodo);
+        inputDOMElement.value = "";
+        drawListToDOM();
+    }
+}
+function toggleCheckState(index) {
+    todos[index].checked = !todos[index].checked;
+    drawListToDOM();
+}
+function deleteTodo(index) {
+    todos.splice(index, 1);
+    drawListToDOM();
+}
 //# sourceMappingURL=script.js.map
